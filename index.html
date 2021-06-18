@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>JS Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header class="head">JavaScript</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Strict_mode">Strict mode</a>
+        <a class="nav-link" href="#Variables">Variables</a>
+        <a class="nav-link" href="#Data_types">Data types</a>
+        <a class="nav-link" href="#Interaction">Interaction</a>
+        <a class="nav-link" href="#Type_Conversions">Type Conversions</a>
+        <a class="nav-link" href="#Operators">Operators</a>
+        <a class="nav-link" href="#Loops">Loops</a>
+        <a class="nav-link" href="#The_switch_statement">The switch statement</a>
+        <a class="nav-link" href="#Functions">Functions</a>
+        <a class="nav-link" href="#Promises_&_async/await">Promises & async/await</a>
+
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header id="header">Introduction</header>
+            <p>JavaScript was initially created to “make web pages alive”.</p>
+            <p>The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.</p>
+            <p>Scripts are provided and executed as plain text. They don’t need special preparation or compilation to run.</p>
+            <p>In this aspect, JavaScript is very different from another language called Java.</p>
+            <h4>What makes JavaScript unique?</h4>
+            <p>There are at least three great things about JavaScript:</p>
+            <div class="boxed"><ul>
+                <li>Full integration with HTML/CSS.</li>
+                <li>Simple things are done simply.</li>
+                <li>Support by all major browsers and enabled by default.</li>
+            </ul></div>
+            <p>JavaScript is the only browser technology that combines these three things.</p>
+            <p>That’s what makes JavaScript unique. That’s why it’s the most widespread tool for creating browser interfaces.</p>
+            <p>That said, JavaScript also allows to create servers, mobile applications, etc.</p>
+            <h4><Summary>Summary</Summary></h4>
+                <ul>
+                    <li>JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.</li>
+                    <li>Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.</li>
+                    <li>There are many languages that get “transpiled” to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.</li>
+                </ul>
+            
+        </section>
+
+        <section class="main-section" id="Strict_mode">
+            <header id="header">Strict mode</header>
+            <p>To fully enable all features of modern JavaScript, we should start scripts with "use strict".</p>
+            <div class="highlight"><code><pre>
+                'use strict';
+
+                ...
+            </code></div>
+            <p>The directive must be at the top of a script or at the beginning of a function body.</p>
+            <p>Without "use strict", everything still works, but some features behave in the old-fashion, “compatible” way. We’d generally prefer the modern behavior.</p>
+            <p>Some modern features of the language (like classes that we’ll study in the future) enable strict mode implicitly.</p>
+        </section>
+
+        <section class="main-section" id="Variables">
+            <header id="header">Variables</header>
+            <p>A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.</p>
+            <p>To create a variable in JavaScript, use the let keyword.</p>
+            <p>The statement below creates (in other words: declares) a variable with the name “message”:</p>
+            <div class="highlight"><code><pre>
+                let message = 'Hello!'; // define the variable and assign the value
+                <br />
+                alert(message); // Hello!
+            </pre></code></div>
+            <p>We can also declare multiple variables in one line:</p>
+            <div class="highlight"><code><pre>
+                let user = 'John', age = 25, message = 'Hello';
+            </pre></code></div>
+            <h4>Variable naming</h4>
+            <p>There are two limitations on variable names in JavaScript:</p>
+            <ol>
+                <li>The name must contain only letters, digits, or the symbols $ and _.</li>
+                <li>The first character must not be a digit.</li>
+            </ol>
+            <p>Examples of valid names:</p>
+            <div class="highlight"><code><pre>
+                let userName;
+                let test123;
+            </pre></code></div>
+            <p>When the name contains multiple words, camelCase is commonly used. That is: words go one after another, each word except first starting with a capital letter: myVeryLongName.</p>
+            <p>What’s interesting – the dollar sign '$' and the underscore '_' can also be used in names. They are regular symbols, just like letters, without any special meaning.</p>
+            <p>These names are valid:</p>
+            <div class="highlight"><code><pre>
+                let $ = 1; // declared a variable with the name "$"
+                let _ = 2; // and now a variable with the name "_"
+
+                alert($ + _); // 3
+            </pre></code></div>
+            <p>Examples of incorrect variable names:</p>
+            <div class="highlight"><code><pre>
+                let 1a; // cannot start with a digit
+
+                let my-name; // hyphens '-' aren't allowed in the name
+            </pre></code></div>
+            <h4>Constants</h4>
+            <p>To declare a constant (unchanging) variable, use const instead of let:</p>
+            <div class="highlight"><code><pre>
+                const myBirthday = '18.04.1982';
+            </pre></code></div>
+            <p>Variables declared using const are called “constants”. They cannot be reassigned. An attempt to do so would cause an error:</p>
+            <div class="highlight"><code><pre>
+                const myBirthday = '18.04.1982';
+            </pre></code></div>
+            <p>Variables declared using const are called “constants”. They cannot be reassigned. An attempt to do so would cause an error:</p>
+            <div class="highlight"><code><pre>
+                const myBirthday = '18.04.1982';
+
+                myBirthday = '01.01.2001'; // error, can't reassign the constant!
+            </pre></code></div>
+            <p>When a programmer is sure that a variable will never change, they can declare it with const to guarantee and clearly communicate that fact to everyone.</p>
+            <h3>Uppercase constants</h3>
+            <p>There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.</p>
+            <p>Such constants are named using capital letters and underscores.</p>
+            <p>For instance, let’s make constants for colors in so-called “web” (hexadecimal) format:</p>
+            <div class="highlight"><code><pre>
+                const COLOR_RED = "#F00";
+                const COLOR_GREEN = "#0F0";
+                const COLOR_BLUE = "#00F";
+                const COLOR_ORANGE = "#FF7F00";
+
+                // ...when we need to pick a color
+                let color = COLOR_ORANGE;
+                alert(color); // #FF7F00
+            </pre></code></div>
+            <p>Benefits:</p>
+            <ul>
+                <li>COLOR_ORANGE is much easier to remember than "#FF7F00".</li>
+                <li>It is much easier to mistype "#FF7F00" than COLOR_ORANGE.</li>
+                <li>When reading the code, COLOR_ORANGE is much more meaningful than #FF7F00.</li>
+            </ul>
+            <p>When should we use capitals for a constant and when should we name it normally? Let’s make that clear.</p>
+            <p>Being a “constant” just means that a variable’s value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are calculated in run-time, during the execution, but do not change after their initial assignment.</p>
+            <p>For instance:</p>
+            <div class="highlight"><code><pre>
+                const pageLoadTime = /* time taken by a webpage to load */;
+            </pre></code></div>
+            <p>The value of pageLoadTime is not known prior to the page load, so it’s named normally. But it’s still a constant because it doesn’t change after assignment.</p>
+            <p>In other words, capital-named constants are only used as aliases for “hard-coded” values.</p>
+            <h4><Summary>Summary</Summary></h4>
+            <p>We can declare variables to store data by using the var, let, or const keywords.</p>
+            <ul>
+                <li>let – is a modern variable declaration.</li>
+                <li>var – is an old-school variable declaration. Normally we don’t use it at all, but we’ll cover subtle differences from let in the chapter The old "var", just in case you need them.</li>
+                <li>const – is like let, but the value of the variable can’t be changed.</li>
+            </ul>
+            <p>Variables should be named in a way that allows us to easily understand what’s inside them.</p>
+        </section>
+
+        <section class="main-section" id="Data_types">
+            <header id="header">Data types</header>
+            <p>A value in JavaScript is always of a certain type. For example, a string or a number.</p>
+            <p>There are eight basic data types in JavaScript. Here, we’ll cover them in general and in the next chapters we’ll talk about each of them in detail.</p>
+            <p>We can put any type in a variable. For example, a variable can at one moment be a string and then store a number:</p>
+            <div class="highlight"><code><pre>
+                // no error
+                let message = "hello";
+                message = 123456;
+            </pre></code></div>
+            <p>Programming languages that allow such things, such as JavaScript, are called “dynamically typed”, meaning that there exist data types, but variables are not bound to any of them.</p>
+            <h4>Number</h4>
+            <div class="highlight"><code><pre>
+                let n = 123;
+                n = 12.345;
+            </pre></code></div>
+            <p>The number type represents both integer and floating point numbers.</p>
+            <p>There are many operations for numbers, e.g. multiplication *, division /, addition +, subtraction -, and so on.</p>
+            <p>Besides regular numbers, there are so-called “special numeric values” which also belong to this data type: Infinity, -Infinity and NaN.</p>
+            <ul>
+                <li>Infinity represents the mathematical Infinity ∞. It is a special value that’s greater than any number.
+                    <p>We can get it as a result of division by zero:</p>
+                    <div class="highlight"><code><pre>
+                        alert( 1 / 0 ); // Infinity
+                    </pre></code></div>
+                    <p>Or just reference it directly:</p>
+                    <div class="highlight"><code><pre>
+                        alert( Infinity ); // Infinity
+                    </pre></code></div>
+                </li>
+                <li>NaN represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance:
+                    <div class="highlight"><code><pre>
+                        alert( "not a number" / 2 ); // NaN, such division is erroneous
+                    </pre></code></div>
+                    <p>NaN is sticky. Any further operation on NaN returns NaN:</p>
+                    <div class="highlight"><code><pre>
+                        alert( "not a number" / 2 + 5 ); // NaN
+                    </pre></code></div>
+                    <p>So, if there’s a NaN somewhere in a mathematical expression, it propagates to the whole result.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Interaction">
+            <header id="header">Interaction</header>
+            <p>We’re using a browser as a working environment, so basic UI functions will be:</p>
+            <div class="highlight"><code><pre>
+                prompt(question, [default]);
+            </pre></code></div>
+            <p>Ask a question, and return either what the visitor entered or null if they clicked “cancel”.</p>
+            <div class="highlight"><code><pre>
+                confirm(question);
+            </pre></code></div>
+            <p>Ask a question and suggest to choose between Ok and Cancel. The choice is returned as true/false.</p>
+            <div class="highlight"><code><pre>
+                alert(message);
+            </pre></code></div>
+            <p>Output a message.</p>
+            <p>All these functions are modal, they pause the code execution and prevent the visitor from interacting with the page until they answer.</p>
+            <p>For instance:</p>
+            <div class="highlight"><code><pre>
+                let userName = prompt("Your name?", "Alice");
+                let isTeaWanted = confirm("Do you want some tea?");
+
+                alert( "Visitor: " + userName ); // Alice
+                alert( "Tea wanted: " + isTeaWanted ); // true
+            </pre></code></div>
+        </section>
+
+        <section class="main-section" id="Type_Conversions">
+            <header id="header">Type Conversions</header>
+            <p>Most of the time, operators and functions automatically convert the values given to them to the right type.</p>
+            <p>For example, alert automatically converts any value to a string to show it. Mathematical operations convert values to numbers.</p>
+            <p>There are also cases when we need to explicitly convert a value to the expected type.</p>
+            <h4>String Conversion</h4>
+            <p>String conversion happens when we need the string form of a value.</p>
+            <p>For example, alert(value) does it to show the value.</p>
+            <p>We can also call the String(value) function to convert a value to a string:</p>
+            <div class="highlight"><code><pre>
+                let value = true;
+                alert(typeof value); // boolean
+
+                value = String(value); // now value is a string "true"
+                alert(typeof value); // string
+            </pre></code></div>
+            <p>String conversion is mostly obvious. A false becomes "false", null becomes "null", etc.</p>
+            <h4>Numeric Conversion</h4>
+            <p>Numeric conversion happens in mathematical functions and expressions automatically.</p>
+            <p>For example, when division / is applied to non-numbers:</p>
+            <div class="highlight"><code><pre>
+                alert( "6" / "2" ); // 3, strings are converted to numbers
+            </pre></code></div>
+            <p>We can use the Number(value) function to explicitly convert a value to a number:</p>
+            <div class="highlight"><code><pre>
+                let str = "123";
+                alert(typeof str); // string
+
+                let num = Number(str); // becomes a number 123
+
+                alert(typeof num); // number
+            </pre></code></div>
+            <p>Explicit conversion is usually required when we read a value from a string-based source like a text form but expect a number to be entered.</p>
+            <p>If the string is not a valid number, the result of such a conversion is NaN. For instance:</p>
+            <div class="highlight"><code><pre>
+                let age = Number("an arbitrary string instead of a number");
+
+                alert(age); // NaN, conversion failed
+            </pre></code></div>
+            <p>Numeric conversion rules:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Becomes...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>undefined</code></td>
+                        <td><code>NaN</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>null</code></td>
+                        <td><code>0</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>true&nbsp;and&nbsp;false&nbsp;&nbsp;&nbsp;</code></td>
+                        <td>
+                            <code>1</code>
+                            and 
+                            <code>0</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>string</code></td>
+                        <td>
+                            Whitespaces from the start and end are removed. If the remaining string is empty, the result is 
+                            <code>0</code>
+                            . Otherwise, the number is “read” from the string. An error gives 
+                            <code>NaN</code>
+                            .
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Examples:</p>
+            <div class="highlight"><code><pre>
+                alert( Number("   123   ") ); // 123
+                alert( Number("123z") );      // NaN (error reading a number at "z")
+                alert( Number(true) );        // 1
+                alert( Number(false) );       // 0
+            </pre></code></div>
+            <p>Please note that null and undefined behave differently here: null becomes zero while undefined becomes NaN.</p>
+            <p>Most mathematical operators also perform such conversion, we’ll see that in the next chapter.</p>
+            <h4>Boolean Conversion</h4>
+            <p>Boolean conversion is the simplest one.</p>
+            <p>It happens in logical operations (later we’ll meet condition tests and other similar things) but can also be performed explicitly with a call to Boolean(value).</p>
+            <p>The conversion rule:</p>
+            <ul>
+                <li>Values that are intuitively “empty”, like 0, an empty string, null, undefined, and NaN, become false.</li>
+                <li>Other values become true.</li>
+            </ul>
+            <p>For instance:</p>
+            <div class="highlight"><code><pre>
+                alert( Boolean(1) ); // true
+                alert( Boolean(0) ); // false
+
+                alert( Boolean("hello") ); // true
+                alert( Boolean("") ); // false
+            </pre></code></div>
+            <h4><Summary>Summary</Summary></h4>
+            <p>The three most widely used type conversions are to string, to number, and to boolean.</p>
+            <p><b>String Conversion</b> – Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.</p>
+            <p><b>Numeric Conversion</b> – Occurs in math operations. Can be performed with Number(value).</p>
+            <p>The conversion follows the rules:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Becomes...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>undefined</code></td>
+                        <td><code>NaN</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>null</code></td>
+                        <td><code>0</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>true&nbsp;/&nbsp;false&nbsp;&nbsp;&nbsp;</code></td>
+                        <td>
+                            <code>1</code>
+                            / 
+                            <code>0</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>string</code></td>
+                        <td>
+                            The string is read “as is”, whitespaces from both sides are ignored. An empty string becomes 
+                            <code>0</code>
+                            . An error gives 
+                            <code>NaN</code>
+                            .
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>Boolean Conversion</b> – Occurs in logical operations. Can be performed with Boolean(value).</p>
+            <p>Follows the rules:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Becomes...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>0</code>,<code>&nbsp;null</code>,<code>&nbsp;undefined</code>,<code>&nbsp;NaN</code>,<code>&nbsp;""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td>any other value</td>
+                        <td>
+                            <code>true</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Most of these rules are easy to understand and memorize. The notable exceptions where people usually make mistakes are:</p>
+            <ul>
+                <li>undefined is NaN as a number, not 0.</li>
+                <li>"0" and space-only strings like " " are true as a boolean.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Operators">
+            <header id="header">Operators</header>
+            <p>JavaScript supports the following operators:</p>
+            <h4>Arithmetical</h4>
+            <p>Regular: * + - /, also % for the remainder and ** for power of a number.</p>
+            <p>The binary plus + concatenates strings. And if any of the operands is a string, the other one is converted to string too:</p>
+            <div class="highlight"><code><pre>
+                alert( '1' + 2 ); // '12', string
+                alert( 1 + '2' ); // '12', string
+            </pre></code></div>
+            <h4>Assignments</h4>
+            <p>There is a simple assignment: a = b and combined ones like a *= 2.</p>
+            <h4>Bitwise</h4>
+            <p>Bitwise operators work with 32-bit integers at the lowest, bit-level: see the docs when they are needed.</p>
+            <h4>Conditional</h4>
+            <p>The only operator with three parameters: cond ? resultA : resultB. If cond is truthy, returns resultA, otherwise resultB.</p>
+            <h4>Logical operators</h4>
+            <p>Logical AND && and OR || perform short-circuit evaluation and then return the value where it stopped (not necessary true/false). Logical NOT ! converts the operand to boolean type and returns the inverse value.</p>
+            <h4>Nullish coalescing operator</h4>
+            <p>The ?? operator provides a way to choose a defined value from a list of variables. The result of a ?? b is a unless it’s null/undefined, then b.</p>
+            <h4>Comparisons</h4>
+            <p>Equality check == for values of different types converts them to a number (except null and undefined that equal each other and nothing else), so these are equal:</p>
+            <div class="highlight"><code><pre>
+                alert( 0 == false ); // true
+                alert( 0 == '' ); // true
+            </pre></code></div>
+            <p>Other comparisons convert to a number as well.</p>
+            <p>The strict equality operator === doesn’t do the conversion: different types always mean different values for it.</p>
+            <p>Values null and undefined are special: they equal == each other and don’t equal anything else.</p>
+            <p>Greater/less comparisons compare strings character-by-character, other types are converted to a number.</p>
+            <h4>Other operators</h4>
+            <p>There are few others, like a comma operator.</p>
+        </section>
+
+        <section class="main-section" id="Loops">
+            <header id="header">Loops</header>
+            <ul>
+                <li><p>We covered 3 types of loops:</p>
+                <div class="highlight"><code><pre>
+                    // 1
+                    while (condition) {
+                    ...
+                    }
+
+                    // 2
+                    do {
+                    ...
+                    } while (condition);
+
+                    // 3
+                    for(let i = 0; i < 10; i++) {
+                    ...
+                    }
+                </pre></code></div>
+                </li>
+                <li>The variable declared in for(let...) loop is visible only inside the loop. But we can also omit let and reuse an existing variable.</li>
+                <li>Directives break/continue allow to exit the whole loop/current iteration. Use labels to break nested loops.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="The_switch_statement">
+            <header id="header">The switch statement</header>
+            <p>The “switch” construct can replace multiple if checks. It uses === (strict equality) for comparisons.</p>
+            <p>For instance:</p>
+            <div class="highlight"><code><pre>
+                let age = prompt('Your age?', 18);
+
+                switch (age) {
+                case 18:
+                    alert("Won't work"); // the result of prompt is a string, not a number
+                    break;
+
+                case "18":
+                    alert("This works!");
+                    break;
+
+                default:
+                    alert("Any value not equal to one above");
+                }
+            </pre></code></div>
+        </section>
+
+        <section class="main-section" id="Functions">
+            <header id="header">Functions</header>
+            <p>We covered three ways to create a function in JavaScript:</p>
+            <ol>
+                <li>
+                    <p>Function Declaration: the function in the main code flow</p>
+                    <div class="highlight"><code><pre>
+                        function sum(a, b) {
+                            let result = a + b;
+                        
+                            return result;
+                        }
+                    </pre></code></div>
+                </li>
+                <li>
+                    <p>Function Expression: the function in the context of an expression</p>
+                    <div class="highlight"><code><pre>
+                        let sum = function(a, b) {
+                            let result = a + b;
+                          
+                            return result;
+                        };
+                    </pre></code></div>
+                </li>
+                <li>
+                    <p>Arrow functions:</p>
+                    <div class="highlight"><code><pre>
+                        // expression at the right side
+                        let sum = (a, b) => a + b;
+
+                        // or multi-line syntax with { ... }, need return here:
+                        let sum = (a, b) => {
+                        // ...
+                        return a + b;
+                        }
+
+                        // without arguments
+                        let sayHi = () => alert("Hello");
+
+                        // with a single argument
+                        let double = n => n * 2;
+                    </pre></code></div>
+                </li>
+            </ol>
+            <ul>
+                <li>Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.</li>
+                <li>Parameters can have default values: function sum(a = 1, b = 2) {...}.</li>
+                <li>Functions always return something. If there’s no return statement, then the result is undefined.</li>
+            </ul>
+        </section>
+        
+        <section class="main-section" id="Promises_&_async/await">
+            <header id="header">Promises & async/await</header>
+            <h4>Introduction: callbacks</h4>
+            <p>A callback is a function passed as an argument to another function.</p>
+            <p>For instance, one such function is the setTimeout function.</p>
+            <p>Using a callback, you could call the calculator function (<code>myCalculator</code>) with a callback, and let the calculator function run the callback after the calculation is finished:</p>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                  function myDisplayer(some) {
+                    document.getElementById("demo").innerHTML = some;
+                  }
+                  
+                  function myCalculator(num1, num2, myCallback) {
+                    let sum = num1 + num2;
+                    myCallback(sum);
+                  }
+                  
+                  myCalculator(<code>5</code>, <code>5</code>, myDisplayer);
+            </pre></code></div>
+            <p>In the example above, <code>myDisplayer</code> is the name of a function.</p>
+            <p>It is passed to <code>myCalculator()</code> as an argument.</p>
+            <div class="bg"><p>When you pass a function as an argument, remember not to use parenthesis.</p>
+
+            <p>Right: myCalculator(5, 5, myDisplayer);</p>
+                
+            <p>Wrong: <del>myCalculator(5, 5, myDisplayer());</del></p></div>
+            <h5>When to Use a Callback?</h5>
+            <p>The examples above are not very exciting.</p>
+            <p>They are simplified to teach you the callback syntax.</p>
+            <p>Where callbacks really shine are in asynchronous functions, where one function has to wait for another function (like waiting for a file to load).</p>
+            <p>Asynchronous functions are covered in the next chapter.</p>
+            
+            <h4>Asynchronous JavaScript</h4>
+            <p>Instead of passing the name of a function as an argument to another function, you can always pass a whole function instead:</p>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                setTimeout(function() { myFunction("I love You !!!"); }, 3000);
+
+                function myFunction(value) {
+                document.getElementById("demo").innerHTML = value;
+                }
+            </pre></code></div>
+            <p>In the example above, <code>function(){ myFunction("I love You !!!"); }</code> is used as a callback. It is a complete function. The complete function is passed to setTimeout() as an argument.</p>
+            <p>3000 is the number of milliseconds before time-out, so <code>myFunction()</code> will be called after 3 seconds.</p>
+            <h5>Waiting for Intervals:</h5>
+            <p>When using the JavaScript function <code>setInterval()</code>, you can specify a callback function to be executed for each interval:</p>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                setInterval(myFunction, 1000);
+
+                function myFunction() {
+                let d = new Date();
+                document.getElementById("demo").innerHTML=
+                d.getHours() + ":" +
+                d.getMinutes() + ":" +
+                d.getSeconds();
+                }
+            </pre></code></div>
+            <p>In the example above, <code>myFunction</code> is used as a callback.</p>
+            <p>The function (the function name) is passed to <code>setInterval()</code> as an argument.</p>
+            <p>1000 is the number of milliseconds between intervals, so <code>myFunction()</code> will be called every second.</p>
+            <h5>Waiting for Files</h5>
+            <p>If you create a function to load an external resource (like a script or a file), you cannot use the content before it is fully loaded.</p>
+            <p>This is the perfect time to use a callback.</p>
+            <p>This example loads a HTML file (<code>mycar.html</code>), and displays the HTML file in a web page, after the file is fully loaded:</p>
+            <h6>Waiting for a File:</h6>
+            <div class="highlight"><code><pre>
+                function myDisplayer(some) {
+                    document.getElementById("demo").innerHTML = some;
+                }
+                  
+                function getFile(myCallback) {
+                    let req = new XMLHttpRequest();
+                    req.open('GET', "mycar.html");
+                    req.onload = function() {
+                      if (req.status == 200) {
+                        myCallback(this.responseText);
+                      } else {
+                        myCallback("Error: " + req.status);
+                      }
+                    }
+                    req.send();
+                }
+                  
+                getFile(myDisplayer);
+            </pre></code></div>
+            <p>In the example above, <code>myDisplayer</code> is used as a callback.</p>
+            <p>The function (the function name) is passed to <code>getFile()</code> as an argument.</p>
+            <h4>Promises</h4>
+            <p>A JavaScript Promise object contains both the producing code and calls to the consuming code:</p>
+            <div class="highlight"><code><pre>
+                    let myPromise = new Promise(function(myResolve, myReject) {
+                    // "Producing Code" (May take some time)
+                    
+                      myResolve(); // when successful
+                      myReject();  // when error
+                    });
+                    
+                    // "Consuming Code" (Must wait for a fulfilled Promise)
+                    myPromise.then(
+                      function(value) { /* code if successful */ },
+                      function(error) { /* code if some error */ }
+                    );
+            </pre></code></div>
+            <h4>JavaScript Async</h4>
+            <h5>Async Syntax</h5>
+            <p>The keyword <code>async</code> before a function makes the function return a promise:</p>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                  async function myFunction() {
+                    return "Hello";
+                  }
+            </pre></code></div>
+            <p>Is the same as:</p>
+            <div class="highlight"><code><pre>
+                async function myFunction() {
+                    return Promise.resolve("Hello");
+                }
+            </pre></code></div>
+            <p>Here is how to use the Promise:</p>
+            <div class="highlight"><code><pre>
+                myFunction().then(
+                    function(value) { /* code if successful */ },
+                    function(error) { /* code if some error */ }
+                );
+            </pre></code></div>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                async function myFunction() {
+                    return "Hello";
+                }
+                myFunction().then(
+                function(value) {myDisplayer(value);},
+                function(error) {myDisplayer(error);}
+                );
+            </pre></code></div>
+            <p>Or simpler, since you expect a normal value (a normal response, not an error):</p>
+            <h6>Example</h6>
+            <div class="highlight"><code><pre>
+                async function myFunction() {
+                    return "Hello";
+                }
+                myFunction().then(
+                    function(value) {myDisplayer(value);}
+                );
+            </pre></code></div>
+            <h5>Await Syntax</h5>
+            <p>The keyword <code>await</code> before a function makes the function wait for a promise:</p>
+            <div class="highlight"><code><pre>
+                let value = await promise;
+            </pre></code></div>
+            <p>The <code>await</code> keyword can only be used inside an <code>async</code> function.</p>
+            <h6>Example</h6>
+            <p>Let's go slowly and learn how to use it.</p>
+            <h5>Basic Syntax</h5>
+            <div class="highlight"><code><pre>
+                async function myDisplay() {
+                    let myPromise = new Promise(function(myResolve, myReject) {
+                      myResolve("I love You !!");
+                    });
+                    document.getElementById("demo").innerHTML = await myPromise;
+                }
+                  
+                myDisplay();
+            </pre></code></div>
+            <h5>Waiting for a Timeout</h5>
+            <div class="highlight"><code><pre>
+                async function myDisplay() {
+                    let myPromise = new Promise(function(myResolve, myReject) {
+                      setTimeout(function() { myResolve("I love You !!"); }, 3000);
+                    });
+                    document.getElementById("demo").innerHTML = await myPromise;
+                }
+                  
+                myDisplay();
+            </pre></code></div>
+            <h5>Waiting for a File</h5>
+            <div class="highlight"><code><pre>
+                async function getFile() {
+                    let myPromise = new Promise(function(myResolve, myReject) {
+                      let req = new XMLHttpRequest();
+                      req.open('GET', "mycar.html");
+                      req.onload = function() {
+                        if (req.status == 200) {myResolve(req.response);}
+                        else {myResolve("File not Found");}
+                      };
+                      req.send();
+                    });
+                    document.getElementById("demo").innerHTML = await myPromise;
+                }
+                  
+                getFile();
+            </pre></code></div>
+        </section>
+    </main>
+</body>
+</html>

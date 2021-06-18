@@ -1,0 +1,92 @@
+  /* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    margin: 20px;
+}
+#navbar {
+    position: fixed;
+    width: 190px;
+    float: left;
+    height: 100%;
+    display: inline;
+    padding: 10px;
+    margin: 0;
+    border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);
+    overflow: scroll;
+}
+.nav-link {
+    color: black !important;
+    background-color: rgb(211, 211, 211);
+}
+.nav-link:hover {
+    color: aliceblue !important;
+    background-color: black;
+}
+nav {
+    display: block;
+    background-color: rgb(197, 197, 197);
+}
+#main-doc {
+    margin-left: 190px;
+    width: auto;
+    padding: 10px;
+}
+#header {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.head {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0px;
+}
+.highlight {
+    margin: 30px;
+    background-color: rgb(224, 222, 222);
+    padding: 20px 20px 0px 0px;
+    font-size: larger;
+}
+table {
+    display: table;
+    border-spacing: 2px;
+    margin: 30px 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(245, 245, 245);
+}
+th,td {
+    padding: 10px;
+}
+.bg {
+    background-color: rgb(253, 253, 177);
+    padding: 20px;
+    margin: 20px;
+}
+section h4, section h3, section h5  {
+    margin: 25px 0px 25px 0px;
+}
+header {
+    margin: 45px 0px 45px 0px;
+}
+
+
