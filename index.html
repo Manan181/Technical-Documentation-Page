@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>JS Documentation</title>
 </head>
 <body>
-    <nav id="navbar">
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
         <header class="head">JavaScript</header>
-        <a class="nav-link" href="#Introduction">Introduction</a>
-        <a class="nav-link" href="#Strict_mode">Strict mode</a>
-        <a class="nav-link" href="#Variables">Variables</a>
-        <a class="nav-link" href="#Data_types">Data types</a>
-        <a class="nav-link" href="#Interaction">Interaction</a>
-        <a class="nav-link" href="#Type_Conversions">Type Conversions</a>
-        <a class="nav-link" href="#Operators">Operators</a>
-        <a class="nav-link" href="#Loops">Loops</a>
-        <a class="nav-link" href="#The_switch_statement">The switch statement</a>
-        <a class="nav-link" href="#Functions">Functions</a>
-        <a class="nav-link" href="#Promises_&_async/await">Promises & async/await</a>
-
-    </nav>
+        <ul>
+            <li><a href="#Introduction">Introduction</a></li>
+            <li><a href="#Strict_mode">Strict mode</a></li>
+            <li><a href="#Variables">Variables</a></li>
+            <li><a href="#Data_types">Data types</a></li>
+            <li><a href="#Interaction">Interaction</a></li>
+            <li><a href="#Type_Conversions">Type Conversions</a></li>
+            <li><a href="#Operators">Operators</a></li>
+            <li><a href="#Loops">Loops</a></li>
+            <li><a href="#The_switch_statement">The switch statement</a></li>
+            <li><a href="#Functions">Functions</a></li>
+            <li><a href="#Promises_&_async/await">Promises & async/await</a></li>
+        </ul>
+    </div>
     <main id="main-doc">
         <section class="main-section" id="Introduction">
-            <header id="header">Introduction</header>
+            <header class="head">Introduction</header>
             <p>JavaScript was initially created to “make web pages alive”.</p>
             <p>The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.</p>
             <p>Scripts are provided and executed as plain text. They don’t need special preparation or compilation to run.</p>
@@ -51,7 +58,7 @@
         </section>
 
         <section class="main-section" id="Strict_mode">
-            <header id="header">Strict mode</header>
+            <header class="head">Strict mode</header>
             <p>To fully enable all features of modern JavaScript, we should start scripts with "use strict".</p>
             <div class="highlight"><code><pre>
                 'use strict';
@@ -64,7 +71,7 @@
         </section>
 
         <section class="main-section" id="Variables">
-            <header id="header">Variables</header>
+            <header class="head">Variables</header>
             <p>A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.</p>
             <p>To create a variable in JavaScript, use the let keyword.</p>
             <p>The statement below creates (in other words: declares) a variable with the name “message”:</p>
@@ -158,7 +165,7 @@
         </section>
 
         <section class="main-section" id="Data_types">
-            <header id="header">Data types</header>
+            <header class="head">Data types</header>
             <p>A value in JavaScript is always of a certain type. For example, a string or a number.</p>
             <p>There are eight basic data types in JavaScript. Here, we’ll cover them in general and in the next chapters we’ll talk about each of them in detail.</p>
             <p>We can put any type in a variable. For example, a variable can at one moment be a string and then store a number:</p>
@@ -201,7 +208,7 @@
         </section>
 
         <section class="main-section" id="Interaction">
-            <header id="header">Interaction</header>
+            <header class="head">Interaction</header>
             <p>We’re using a browser as a working environment, so basic UI functions will be:</p>
             <div class="highlight"><code><pre>
                 prompt(question, [default]);
@@ -227,7 +234,7 @@
         </section>
 
         <section class="main-section" id="Type_Conversions">
-            <header id="header">Type Conversions</header>
+            <header class="head">Type Conversions</header>
             <p>Most of the time, operators and functions automatically convert the values given to them to the right type.</p>
             <p>For example, alert automatically converts any value to a string to show it. Mathematical operations convert values to numbers.</p>
             <p>There are also cases when we need to explicitly convert a value to the expected type.</p>
@@ -398,7 +405,7 @@
         </section>
 
         <section class="main-section" id="Operators">
-            <header id="header">Operators</header>
+            <header class="head">Operators</header>
             <p>JavaScript supports the following operators:</p>
             <h4>Arithmetical</h4>
             <p>Regular: * + - /, also % for the remainder and ** for power of a number.</p>
@@ -432,7 +439,7 @@
         </section>
 
         <section class="main-section" id="Loops">
-            <header id="header">Loops</header>
+            <header class="head">Loops</header>
             <ul>
                 <li><p>We covered 3 types of loops:</p>
                 <div class="highlight"><code><pre>
@@ -458,7 +465,7 @@
         </section>
 
         <section class="main-section" id="The_switch_statement">
-            <header id="header">The switch statement</header>
+            <header class="head">The switch statement</header>
             <p>The “switch” construct can replace multiple if checks. It uses === (strict equality) for comparisons.</p>
             <p>For instance:</p>
             <div class="highlight"><code><pre>
@@ -480,7 +487,7 @@
         </section>
 
         <section class="main-section" id="Functions">
-            <header id="header">Functions</header>
+            <header class="head">Functions</header>
             <p>We covered three ways to create a function in JavaScript:</p>
             <ol>
                 <li>
@@ -531,7 +538,7 @@
         </section>
         
         <section class="main-section" id="Promises_&_async/await">
-            <header id="header">Promises & async/await</header>
+            <header class="head">Promises & async/await</header>
             <h4>Introduction: callbacks</h4>
             <p>A callback is a function passed as an argument to another function.</p>
             <p>For instance, one such function is the setTimeout function.</p>

@@ -1,65 +1,103 @@
-  /* // X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  }
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {  }
-
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
-
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {  }
-body {
+* {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
-section {
-    margin: 20px;
-}
-#navbar {
+.sidebar {
     position: fixed;
-    width: 190px;
+    left: -255px;
+    width: 255px;
     float: left;
     height: 100%;
-    display: inline;
-    padding: 10px;
-    margin: 0;
-    border-right: solid;
-    border-color: rgba(0, 22, 22, 0.4);
+    background: #042331;
     overflow: scroll;
+    top: 0;
+    transition: all .5s ease;
 }
-.nav-link {
-    color: black !important;
-    background-color: rgb(211, 211, 211);
+.sidebar > ul li {
+    list-style: none !important;
 }
-.nav-link:hover {
-    color: aliceblue !important;
-    background-color: black;
-}
-nav {
-    display: block;
-    background-color: rgb(197, 197, 197);
-}
-#main-doc {
-    margin-left: 190px;
-    width: auto;
-    padding: 10px;
-}
-#header {
-    font-size: xx-large;
+.sidebar header {
+    font-size: 30px;
     font-weight: bolder;
-    text-decoration: underline;
+    color: white;
+    line-height: 70px;
+    text-align: center;
+    user-select: none;
+    background: #063146;
+}
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width:100%;
+    line-height: 40px;
+    font-size: 15px;
+    color: white;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+    text-decoration: none;
+}
+ul li:hover a{
+    padding-left: 40px;
+    color: aliceblue !important;
+}
+#check {
+    display: none;
+}
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+label #btn {
+    left: 40px;
+    top: 20px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s ;
+} 
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+#check:checked ~ .sidebar {
+    left: 0;
+}
+#check:checked ~ label #btn {
+    left: 255px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel {
+    left: 195px;
+}
+#check:checked ~ #main-doc {
+    margin-left: 255px;
 }
 .head {
     font-size: xx-large;
     font-weight: bolder;
-    margin: 0px;
+    margin: 50px 0px 0px 0px;
+}
+#main-doc {
+    /* margin-left: 190px; */
+    /* padding-left: 200px !important; */
+    width: auto;
+    padding: 10px;
+    transition: all .5s;
+}
+section {
+    margin: 20px;
 }
 .highlight {
     margin: 30px;
@@ -85,8 +123,20 @@ th,td {
 section h4, section h3, section h5  {
     margin: 25px 0px 25px 0px;
 }
-header {
-    margin: 45px 0px 45px 0px;
-}
+  /* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
 
+// Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
 
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
